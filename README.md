@@ -1,6 +1,6 @@
 [![Build Status](https://travis-ci.org/vedvrat13/STARWARS.svg?branch=master)](https://travis-ci.org/vedvrat13/STARWARS)
 
-
+- - - -
 # StarWars App
 
 ### TO START:
@@ -25,9 +25,8 @@ App gets Hosted here: http://0.0.0.0:8080/
     - View the Details
     - Upvote/Downvote
     - See Total Votes
+    - Popular Character gets displayed first in List
     - Add Comments & View The Same
 
-### TO DO:  
-    -   Sorting based on votes in progress
-
+- - - -
 Thanks!!

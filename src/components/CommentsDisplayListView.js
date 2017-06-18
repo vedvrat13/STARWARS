@@ -3,7 +3,9 @@ import React,{PropTypes} from 'react';
 
 const CommentsDisplayListView = (props) => {
     return (
-        <div>{props.message}</div>
+        <li className='commentListItem'>
+            {props.message}
+        </li>
     );
 };
 

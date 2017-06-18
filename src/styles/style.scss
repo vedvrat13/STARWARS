@@ -13,6 +13,7 @@ body {
 #header{
     border-bottom:1px solid $defaultBorderColor;
     text-align: center;
+    font-size: 20px;
 }
 #charactersListSection{
     padding: 20px;
@@ -57,6 +58,9 @@ body {
         border-right: none;
         color: #FF5722;
     }
+}
+.characterFields{
+    margin-top: 20px;
 }
 .characterFieldRow{
     margin:5px 0px;

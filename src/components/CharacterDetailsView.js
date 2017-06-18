@@ -1,5 +1,5 @@
 import React,{PropTypes} from 'react';
-import {Grid,Row,Col} from 'react-flexbox-grid';
+import {Row,Col} from 'react-flexbox-grid';
 import _ from 'lodash';
 
 import CommentsSection from './CommentsSection';
@@ -11,10 +11,10 @@ export function renderAttributes(props){
         if(typeof(value) == 'string'){
             elements.push(<Col md={12} xs={12} key={key+value}>
                 <Row className='characterFieldRow'>
-                    <Col md={1} xs={1}>
+                    <Col md={4} xs={4}>
                         <label htmlFor={key+'_Field'} className='characterFieldLabel'>{key.replace(/_|-/g,' ')} :</label>
                     </Col>
-                    <Col md={4} xs={4} name={key+'_Field'}>
+                    <Col md={6} xs={6} name={key+'_Field'}>
                         {value}
                     </Col>
                 </Row>
@@ -43,7 +43,7 @@ const CharacterDetailsView = (props) => {
         );
     } else {
         return (
-            <Grid>
+            <div>
                 <Row>
                     <Col md={12} xs={12} className='characterNameField'>{props.peopleData.name} from {props.planetData.name}</Col>
                 </Row>
@@ -53,13 +53,15 @@ const CharacterDetailsView = (props) => {
                 <Row className='commentsSection'>
                     <Col md={12} xs={12}>
                         <h4>Comments:</h4>
-                        {renderComments(props.peopleData)}
+                        <ul>
+                            {renderComments(props.peopleData)}
+                        </ul>
                     </Col>
                     <Col md={12} xs={12}>
                         <CommentsSection {...props} saveComment={props.saveComment} />
                     </Col>
                 </Row>
-            </Grid>
+            </div>
         );
     }
 };
