@@ -1,0 +1,51 @@
+{
+  "name": "starWars",
+  "version": "1.0.0",
+  "description": "Usage of SWAPI",
+  "main": "./index.js",
+  "scripts": {
+    "clean": "rimraf build",
+    "build": "webpack",
+    "deploy": "webpack-dev-server --host 0.0.0.0 --history-api-fallback --inline --progress --colors",
+    "start": "npm run clean && npm run deploy",
+    "test": "mocha --require ignore-styles --compilers js:babel-register --recursive ./test/**/*.js"
+  },
+  "author": "@vedvrat13",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.16.2",
+    "lodash": "^4.17.4",
+    "react": "^15.5.4",
+    "react-dom": "^15.5.4",
+    "react-flexbox-grid": "^1.1.3",
+    "react-redux": "^5.0.5",
+    "redux": "^3.6.0",
+    "redux-promise": "^0.5.3",
+    "redux-thunk": "^2.2.0",
+    "webpack": "^2.6.1"
+  },
+  "devDependencies": {
+    "babel-core": "^6.24.1",
+    "babel-eslint": "^7.2.3",
+    "babel-loader": "^7.0.0",
+    "babel-preset-env": "^1.5.1",
+    "babel-preset-react": "^6.24.1",
+    "chai": "^4.0.2",
+    "css-loader": "^0.28.4",
+    "enzyme": "^2.8.2",
+    "eslint": "^3.19.0",
+    "eslint-import-resolver-webpack": "^0.8.1",
+    "eslint-plugin-import": "^2.3.0",
+    "eslint-plugin-react": "^7.0.1",
+    "ignore-styles": "^5.0.1",
+    "jsdom": "^9.0.0",
+    "mocha": "^3.4.2",
+    "node-sass": "^4.5.3",
+    "react-addons-test-utils": "^15.5.0",
+    "rimraf": "^2.6.1",
+    "sass-loader": "^6.0.6",
+    "sinon": "^2.3.4",
+    "style-loader": "^0.18.2",
+    "webpack-dev-server": "^2.4.5"
+  }
+}
