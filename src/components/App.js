@@ -21,7 +21,11 @@ export class App extends Component {
     }
     renderCharacters(props){
         if(_.size(props.people) > 0){
-            return props.people.map((item, index) => {
+
+            // DISPLAY USERS BASED ON POPULARITY
+            let sortedPeople = _.orderBy(props.people, [function (o) { return o.votes.upvoted + o.votes.downvoted; }], ['desc']);
+
+            return sortedPeople.map((item, index) => {
                 let planet = _.find(props.planets, function (planet) {
                     if(planet.url == item.homeworld){
                         return planet;
@@ -61,7 +65,6 @@ export class App extends Component {
 
 export function mapStateToProps(state){
     let people = state.appReducer;
-    console.log(people);
     return people;
 }
 
@@ -77,7 +80,6 @@ export function mapDispatchToProps(dispatch, ownProps) {
             dispatch(modifyVotes(peopleURL, voteAction));
         },
         saveComment: (peopleURL, comment) => {
-            console.log(peopleURL + ' // ' + comment);
             dispatch(saveComment(peopleURL, comment));
         }
     };
