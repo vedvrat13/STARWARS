@@ -1,4 +1,5 @@
-[![Build Status](https://travis-ci.org/vedvrat13/reactBoilerplate.svg?branch=master)](https://travis-ci.org/vedvrat13/reactBoilerplate)
+[![Build Status](https://travis-ci.org/vedvrat13/STARWARS.svg?branch=master)](https://travis-ci.org/vedvrat13/STARWARS)
+
 
 # StarWars App
 
