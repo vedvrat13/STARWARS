@@ -6,7 +6,7 @@
   "scripts": {
     "clean": "rimraf build",
     "build": "webpack",
-    "deploy": "webpack-dev-server --host 0.0.0.0 --history-api-fallback --inline --progress --colors",
+    "deploy": "webpack-dev-server --host 0.0.0.0 --history-api-fallback --open --inline --progress --colors",
     "start": "npm run clean && npm run deploy",
     "test": "mocha --require ignore-styles --compilers js:babel-register --recursive ./test/**/*.js"
   },
@@ -46,6 +46,7 @@
     "sass-loader": "^6.0.6",
     "sinon": "^2.3.4",
     "style-loader": "^0.18.2",
+    "stylelint-webpack-plugin": "^0.7.0",
     "webpack-dev-server": "^2.4.5"
   }
 }

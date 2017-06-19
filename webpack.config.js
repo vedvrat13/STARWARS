@@ -1,4 +1,5 @@
 const path = require('path');
+const StyleLintPlugin = require('stylelint-webpack-plugin');
 
 module.exports = {
     entry: {
@@ -37,5 +38,10 @@ module.exports = {
             loader: 'style-loader!css-loader?modules',
             include: /flexboxgrid/
         }]
-    }
+    },
+    plugins: [
+        new StyleLintPlugin({
+            context: path.resolve(__dirname + '/src/styles/')
+        }),
+    ],
 };
