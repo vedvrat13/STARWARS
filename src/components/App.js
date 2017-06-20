@@ -1,7 +1,6 @@
 import React, {Component, PropTypes} from 'react';
 import {connect} from 'react-redux';
 import {Grid,Row,Col} from 'react-flexbox-grid';
-import _ from 'lodash';
 
 // ACTION_CREATORS
 import {loadStore,loadPeopleData, modifyVotes, saveComment} from '../actions/actions';
@@ -19,26 +18,6 @@ export class App extends Component {
         console.log('-- Thanks for Viewing my Solution! @vedvrat13 --');
         this.props.loadStore('');
     }
-    renderCharacters(props){
-        if(_.size(props.people) > 0){
-
-            // DISPLAY USERS BASED ON POPULARITY
-            let sortedPeople = _.orderBy(props.people, [function (o) { return o.votes.upvoted + o.votes.downvoted; }], ['desc']);
-
-            return sortedPeople.map((item, index) => {
-                let planet = _.find(props.planets, function (planet) {
-                    if(planet.url == item.homeworld){
-                        return planet;
-                    }
-                });
-                return (
-                    <CharacterListView {...item} planet={planet} key={index} index={index} loadPeopleData={this.props.loadPeopleData} modifyVotes={props.modifyVotes}/>
-                );
-            });
-        } else {
-            return <div>Loading...</div>;
-        }
-    }
     render() {
         return (
             <Grid>
@@ -50,9 +29,7 @@ export class App extends Component {
                 <Row>
                     <Col md={6} xs={6} id='charactersListSection'>
                         <SearchBar loadStore={this.props.loadStore}/>
-                        <ul>
-                            {this.renderCharacters(this.props)}
-                        </ul>
+                        <CharacterListView {...this.props} />
                     </Col>
                     <Col md={6} xs={6} id='characterDetailSection'>
                         <CharacterDetailsView {...this.props.selected} saveComment={this.props.saveComment}/>
