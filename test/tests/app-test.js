@@ -26,7 +26,7 @@ describe('APP : ', function (){
     });
 
     it('Should render CharacterListView Container', () =>{
-        expect( wrapper.find('ul').length).to.equal(1);
+        expect( wrapper.find('CharacterListView').length).to.equal(1);
     });
 
     it('Should render CharacterDetailsView Container', () =>{
